@@ -1,32 +1,46 @@
 /*---------------------------------------/*
  # SETTINGS
 /*---------------------------------------*/
+@import url("https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 /*---------------------------------------/*
  # GENERIC
 /*---------------------------------------*/
 *,
-*::before,
-*::after {
+*:before,
+*:after {
   box-sizing: border-box;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  font-size: 100%;
+  font-weight: normal;
+}
+
+img {
+  display: block;
+  max-width: 100%;
 }
 
 /*---------------------------------------/*
  # ELEMENTS
 /*---------------------------------------*/
 html {
-  background-color: #f7fff7;
+  background-color: #fafafa;
   scroll-behavior: smooth;
+}
+
+nav {
+  background-color: #ffffff;
 }
 
 body {
   font-family: Dosis, sans-serif;
-  background-color: #fff;
+  background-color: #fafafa;
   margin: 0;
   padding: 0;
-}
-
-nav {
-  background-color: #e1e0aa;
 }
 
 /*---------------------------------------/*
@@ -40,54 +54,232 @@ nav {
 /*---------------------------------------/*
  # COMPONENTS
 /*---------------------------------------*/
+.c-main {
+  position: relative;
+}
+
 .c-nav {
-  background-color: #e1e0aa;
   display: flex;
+  height: 100px;
+  padding: 0px 24px;
   justify-content: space-between;
   align-items: center;
-  gap: 1rem;
+  flex-shrink: 0;
+  background: #fff;
 }
 .c-nav__list {
   display: flex;
-  gap: 1rem;
+  gap: 30px;
   padding: 0;
   list-style-type: none;
 }
 .c-nav__link {
   text-decoration: none;
-  color: black;
+  color: #3f423f;
+  font-family: Lexend;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 24px; /* 133.333% */
+  text-transform: capitalize;
 }
 .c-nav__link--active {
   font-weight: bold;
 }
 
 .c-header {
-  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../images/header.jpg");
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
-  background-attachment: fixed;
-  padding: 5rem;
-  margin-bottom: 3rem;
-  text-align: center;
+  padding: 40px 0px;
+  background-color: #e1e0aa;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 78px;
+}
+.c-header__text {
+  max-width: 692px;
 }
 .c-header__title {
-  font-size: 4rem;
-  font-weight: 400;
-  color: #fff;
-  text-shadow: 2px 2px 6px black;
+  color: #3f423f;
+  font-family: Poppins;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 700;
 }
 .c-header__description {
-  color: #fff;
-  font-size: 2rem;
-  margin: auto;
-  max-width: 40rem;
-  margin-bottom: 2rem;
-  display: block;
+  color: #3f423f;
+  font-family: Georgia;
+  font-size: 60px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+.c-header__img {
+  max-width: 100%;
+  height: auto;
+  border: 2px solid rgba(0, 0, 0, 0.2);
 }
 
-.c-main {
-  height: 80rem;
+.c-subtitles {
+  margin: 2rem;
+  color: #3f423f;
+  font-family: Georgia;
+  font-size: 35px;
+  font-weight: 700;
+  text-align: center;
+}
+.c-subtitles__desc {
+  margin: 18px;
+  color: #000;
+  font-family: Inter;
+  font-size: 18px;
+  font-weight: 400;
+  text-align: center;
+}
+
+.c-about-us {
+  display: flex;
+  padding: 26px;
+  gap: 42px;
+  justify-content: center;
+  align-items: center;
+  border: 1px #f2f2f2;
+  background: white;
+  max-width: none;
+}
+.c-about-us__p {
+  margin: 18px;
+}
+.c-about-us ul {
+  padding-left: 40px;
+  margin: 20;
+}
+.c-about-us__text {
+  max-width: 654px;
+  font-family: "Franklin Gothic Book";
+  font-size: 20px;
+  font-weight: 400;
+}
+.c-about-us__img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 20px;
+  width: 478px;
+  height: 600px;
+  background-color: grey;
+}
+
+.c-evenementen {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+.c-evenementen__cover {
+  background-color: gray;
+  flex: 1 1 15rem;
+  height: 25rem;
+  margin-bottom: 2rem;
+}
+.c-evenementen__link {
+  font-size: 22px;
+  text-align: center;
+}
+.c-evenementen__img {
+  max-width: 500px;
+  height: 100%;
+}
+.c-evenementen__img-div {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.c-persbericht {
+  display: flex;
+  align-items: center;
+  gap: 59px;
+  margin-bottom: 1rem;
+}
+.c-persbericht__backgroundcolor {
+  background-color: white;
+  padding-top: 0.1rem;
+  padding-bottom: 1rem;
+}
+.c-persbericht__img {
+  width: 240px;
+  height: 155px;
+}
+.c-persbericht__text {
+  font-family: Georgia;
+  font-size: 22px;
+  align-self: stretch;
+}
+.c-persbericht__text--title {
+  font-weight: 700;
+}
+.c-persbericht__text--artikel {
+  font-weight: 400;
+}
+.c-persbericht__text--lees-meer {
+  line-height: normal;
+}
+.c-persbericht__text--lees-meer:visited {
+  color: black;
+}
+.c-persbericht__selector {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+}
+.c-persbericht__selector--btn {
+  display: flex;
+  min-width: 45px;
+  height: 45px;
+  padding: 10px;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  border: 1px solid #000;
+  font-family: Georgia;
+  font-size: 32px;
+  font-weight: 400;
+}
+.c-persbericht__selector--btn-link {
+  text-decoration: none;
+}
+.c-persbericht__selector--btn-link:visited {
+  color: black;
+}
+
+.c-galerij {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-bottom: 2rem;
+}
+.c-galerij__container {
+  margin-bottom: 2rem;
+}
+.c-galerij__img {
+  background-color: grey;
+  padding: 1rem;
+  flex: 1 1 20rem;
+  height: 16rem;
+}
+.c-galerij__img--big {
+  flex: 1 1 30rem;
+}
+
+.c-footer {
+  background-color: #e1e0aa;
+  padding: 2rem;
+  align-items: center;
+}
+.c-footer__contents {
+  display: flex;
+  justify-content: space-between;
+}
+.c-footer__contents--items {
+  font-size: 20px;
+  font-weight: 700;
 }
 
 /*---------------------------------------/*

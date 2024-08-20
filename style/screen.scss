@@ -1,111 +1,300 @@
 /*---------------------------------------/*
  # SETTINGS
 /*---------------------------------------*/
-$main-color: #f7fff7;
+$main-color: #fafafa;
 $green: #e1e0aa;
+$green-accent1: #3f423f;
+
+@import url("https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 
 /*---------------------------------------/*
  # GENERIC
 /*---------------------------------------*/
 *,
-*::before,
-*::after {
-    box-sizing: border-box;
+*:before,
+*:after {
+  // Reset box-sizing
+  box-sizing: border-box;
+}
+
+* {
+  // Reset margin and font-size
+  padding: 0;
+  margin: 0;
+  font-size: 100%;
+  font-weight: normal;
+}
+
+img {
+  display: block; // make images block level elements
+  max-width: 100%; // make images responsive
 }
 
 /*---------------------------------------/*
  # ELEMENTS
 /*---------------------------------------*/
 html {
-    background-color: $main-color;
-    scroll-behavior: smooth;
+  background-color: $main-color;
+  scroll-behavior: smooth;
+}
+nav {
+  background-color: #ffffff;
 }
 
 body {
-    font-family: Dosis, sans-serif;
-    background-color: #fff;
-    margin: 0;
-    padding: 0;
-}
-
-nav {
-    background-color: $green;
+  font-family: Dosis, sans-serif;
+  background-color: #fafafa;
+  margin: 0;
+  padding: 0;
 }
 
 /*---------------------------------------/*
  # OBJECTS
 /*---------------------------------------*/
 .o-container {
-    max-width: 80rem;
-    margin: 0 auto;
+  max-width: 80rem;
+  margin: 0 auto;
 }
 
 /*---------------------------------------/*
  # COMPONENTS
 /*---------------------------------------*/
+.c-main {
+  position: relative;
+}
 .c-nav {
-    background-color: $green;
+  display: flex;
+  height: 100px;
+  padding: 0px 24px;
+  justify-content: space-between;
+  align-items: center;
+  flex-shrink: 0;
+  background: #fff;
+
+  &__list {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 1rem;
+    gap: 30px;
+    padding: 0;
+    list-style-type: none;
+  }
 
-    &__list {
-        display: flex;
-        gap: 1rem;
-        // margin: 0;
-        padding: 0;
-        list-style-type: none;
+  &__link {
+    text-decoration: none;
+    color: $green-accent1;
+    font-family: Lexend;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 24px; /* 133.333% */
+    text-transform: capitalize;
+
+    // &:hover,
+    // &--active {
+    //     color: $green;
+    // }
+    &--active {
+      font-weight: bold;
     }
-
-    &__link {
-        text-decoration: none;
-        color: black;
-
-        // &:hover,
-        // &--active {
-        //     color: $green;
-        // }
-        &--active {
-            font-weight: bold;
-        }
-    }
+  }
 }
 
 .c-header {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../images/header.jpg');
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
-    background-attachment: fixed;
-    padding: 5rem;
-    margin-bottom: 3rem;
+  padding: 40px 0px;
+  background-color: $green;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 78px;
+  &__text {
+    max-width: 692px;
+  }
+
+  &__title {
+    color: $green-accent1;
+    font-family: Poppins;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 700;
+  }
+  &__description {
+    color: $green-accent1;
+    font-family: Georgia;
+    font-size: 60px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+  }
+
+  &__img {
+    max-width: 100%;
+    height: auto;
+    border: 2px solid rgba(0, 0, 0, 0.2);
+  }
+}
+.c-subtitles {
+  margin: 2rem;
+  color: $green-accent1;
+  font-family: Georgia;
+  font-size: 35px;
+  font-weight: 700;
+  text-align: center;
+  &__desc {
+    margin: 18px;
+    color: #000;
+    font-family: Inter;
+    font-size: 18px;
+    font-weight: 400;
     text-align: center;
+  }
+}
+.c-about-us {
+  display: flex;
+  padding: 26px;
+  gap: 42px;
+  justify-content: center;
+  align-items: center;
+  border: 1px #f2f2f2;
+  background: white;
+  max-width: none;
+  &__p {
+    margin: 18px;
+  }
+  ul {
+    padding-left: 40px;
+    margin: 20;
+  }
 
-    
-    &__title {
-        font-size: 4rem;
-        // font-family: Niconne, cursive;
-        font-weight: 400;
-        color: #fff;
-        text-shadow: 2px 2px 6px black;
+  &__text {
+    max-width: 654px;
+    font-family: "Franklin Gothic Book";
+    font-size: 20px;
+    font-weight: 400;
+  }
+  &__img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 20px;
 
+    width: 478px;
+    height: 600px;
+    background-color: grey;
+  }
+}
+.c-evenementen {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+
+  &__cover {
+    background-color: gray;
+    flex: 1 1 15rem;
+    height: 25rem;
+    margin-bottom: 2rem;
+  }
+  &__link {
+    // text-decoration: none;
+    font-size: 22px;
+    text-align: center;
+  }
+  &__img {
+    max-width: 500px;
+    height: 100%;
+    &-div {
+      display: flex;
+      flex-wrap: wrap;
     }
-
-    &__description {
-        // background-color: rgba(0, 0, 0, 0.8);
-        color: #fff;
-        font-size: 2rem;
-        margin: auto;
-        max-width: 40rem;
-        margin-bottom: 2rem;
-        display: block;
-        // position: absolute;
-    }
+  }
 }
 
-.c-main {
-    height: 80rem;
+.c-persbericht {
+  display: flex;
+  align-items: center;
+  gap: 59px;
+  margin-bottom: 1rem;
+  &__backgroundcolor {
+    background-color: white;
+    padding-top: 0.1rem;
+    padding-bottom: 1rem;
+  }
+  &__img {
+    width: 240px;
+    height: 155px;
+  }
+  &__text {
+    font-family: Georgia;
+    font-size: 22px;
+    align-self: stretch;
+    &--title {
+      font-weight: 700;
+    }
+    &--artikel {
+      font-weight: 400;
+    }
+    &--lees-meer {
+      line-height: normal;
+      &:visited {
+        color: black;
+      }
+    }
+  }
+  &__selector {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    &--btn {
+      display: flex;
+      min-width: 45px;
+      height: 45px;
+      padding: 10px;
+      justify-content: center;
+      align-items: center;
+      gap: 10px;
+      border: 1px solid #000;
+      font-family: Georgia;
+      font-size: 32px;
+      font-weight: 400;
+
+      &-link {
+        text-decoration: none;
+        &:visited {
+          color: black;
+        }
+      }
+    }
+  }
+}
+
+.c-galerij {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-bottom: 2rem;
+  &__container {
+    margin-bottom: 2rem;
+  }
+  &__img {
+    background-color: grey;
+    padding: 1rem;
+    flex: 1 1 20rem;
+    height: 16rem;
+    &--big {
+      flex: 1 1 30rem;
+    }
+  }
+}
+.c-footer {
+  background-color: $green;
+  padding: 2rem;
+  align-items: center;
+  &__contents {
+    display: flex;
+    justify-content: space-between;
+    &--items {
+      font-size: 20px;
+      font-weight: 700;
+    }
+  }
 }
 
 /*---------------------------------------/*
