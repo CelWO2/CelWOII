@@ -169,6 +169,9 @@ body {
   box-shadow: 0 5px 10px rgba(63, 66, 63, 0.22);
 }
 .c-audio-controls {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   &__btn {
     display: flex;
     justify-content: center;
